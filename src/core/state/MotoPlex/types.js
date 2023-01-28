@@ -1,0 +1,7 @@
+const SUBMIT_EMAIL = 'SUBMIT_EMAIL';
+const SET_IS_LOADING = 'SET_IS_LOADING';
+
+export default {
+    SUBMIT_EMAIL,
+    SET_IS_LOADING
+};
