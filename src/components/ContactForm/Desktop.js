@@ -23,7 +23,7 @@ const TitleContact = styled(Typography)(() => ({
     color: 'white',
     paddingLeft: 25,
     letterSpacing: '2px',
-    textDecoration: 'underline'
+    textDecoration: 'none'
 }));
 
 const CssTextField = styled(TextField)({
