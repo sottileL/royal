@@ -1,86 +1,84 @@
-import React, {useRef, useState} from 'react';
-import {scrollIntoView} from 'seamless-scroll-polyfill';
-import {styled} from '@mui/styles';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
+import React, { useRef, useState } from 'react'
+import { scrollIntoView } from 'seamless-scroll-polyfill'
+import { styled } from '@mui/styles'
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
 
-import {Box} from '@mui/system';
+import { Box } from '@mui/system'
 
-import Instagram from '@mui/icons-material/Instagram';
-import LocationCityRounded from '@mui/icons-material/LocationOn';
-import WhatsApp from '@mui/icons-material/WhatsApp';
-import FacebookOutlined from '@mui/icons-material/FacebookOutlined';
+import Instagram from '@mui/icons-material/Instagram'
+import LocationCityRounded from '@mui/icons-material/LocationOn'
+import WhatsApp from '@mui/icons-material/WhatsApp'
+import FacebookOutlined from '@mui/icons-material/FacebookOutlined'
 
-import {Carousel} from 'react-responsive-carousel';
-import Lightbox from 'react-image-lightbox';
+import { Carousel } from 'react-responsive-carousel'
+import Lightbox from 'react-image-lightbox'
 
-import getImages from '../../helpers/getImages';
+import getImages from '../../helpers/getImages'
 
-import ContactForm from '../../components/ContactForm/Mobile';
-import Header from '../../components/Header/Mobile';
-import Marcas from '../../components/Marcas/Mobile';
+import ContactForm from '../../components/ContactForm/Mobile'
+import Header from '../../components/Header/Mobile'
+import Marcas from '../../components/Marcas/Mobile'
 
-import Banner1 from '../../images/banner-mobile-1.webp';
-import Banner2 from '../../images/banner-mobile-2.webp';
-import FirstBlock from '../../images/cuadros/cuadro-1.webp';
-import Nosotros from '../../images/nosotros.webp';
-import SecondBlock from '../../images/cuadros/cuadro-2.webp';
+import Banner1 from '../../images/banner-mobile-1.webp'
+import Banner2 from '../../images/banner-mobile-2.webp'
+import Nosotros from '../../images/nosotros.webp'
 
-import Aprilia from '../../images/marcas/aprilia.webp';
-import Guzzi from '../../images/marcas/guzzi.webp';
-import Paiggio from '../../images/marcas/paiggio.webp';
-import PaiggioGroup from '../../images/marcas/paiggioGroup.webp';
-import Vespa from '../../images/marcas/vespa.webp';
+import Aprilia from '../../images/marcas/aprilia.webp'
+import Guzzi from '../../images/marcas/guzzi.webp'
+import Paiggio from '../../images/marcas/paiggio.webp'
+import PaiggioGroup from '../../images/marcas/paiggioGroup.webp'
+import Vespa from '../../images/marcas/vespa.webp'
 
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import 'react-image-lightbox/style.css';
-import './style.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import 'react-image-lightbox/style.css'
+import './style.css'
 
 const SubtitleTypography = styled(Typography)(() => ({
-    fontSize: '1.2rem!important',
-    fontWeight: 'bold !important',
-    color: 'white',
-    letterSpacing: '2px'
-}));
+  fontSize: '1.2rem!important',
+  fontWeight: 'bold !important',
+  color: 'white',
+  letterSpacing: '2px'
+}))
 
 const Mobile = () => {
-    const [brand, setBrand] = useState(null);
-    const images = getImages(brand);
-    const [photoIndex, setPhotoIndex] = useState(0);
-    const [isOpen, setIsOpen] = useState(false);
+  const [brand, setBrand] = useState(null)
+  const images = getImages(brand)
+  const [photoIndex, setPhotoIndex] = useState(0)
+  const [isOpen, setIsOpen] = useState(false)
 
-    const inicioRef = useRef(null);
-    const marcasRef = useRef(null);
-    const nosotrosRef = useRef(null);
-    const contactoRef = useRef(null);
+  const inicioRef = useRef(null)
+  const marcasRef = useRef(null)
+  const nosotrosRef = useRef(null)
+  const contactoRef = useRef(null)
 
-    const handleClickMenu = section => {
-        if (section === 'inicio') {
-            scrollIntoView(inicioRef.current, {
-                behavior: 'smooth', block: 'start', inline: 'center'
-            });
-        }
+  const handleClickMenu = section => {
+    if (section === 'inicio') {
+      scrollIntoView(inicioRef.current, {
+        behavior: 'smooth', block: 'start', inline: 'center'
+      })
+    }
 
-        if (section === 'marcas') {
-            scrollIntoView(marcasRef.current, {
-                behavior: 'smooth', block: 'start', inline: 'center'
-            });
-        }
+    if (section === 'marcas') {
+      scrollIntoView(marcasRef.current, {
+        behavior: 'smooth', block: 'start', inline: 'center'
+      })
+    }
 
-        if (section === 'nosotros') {
-            scrollIntoView(nosotrosRef.current, {
-                behavior: 'smooth', block: 'start', inline: 'center'
-            });
-        }
+    if (section === 'nosotros') {
+      scrollIntoView(nosotrosRef.current, {
+        behavior: 'smooth', block: 'start', inline: 'center'
+      })
+    }
 
-        if (section === 'contacto') {
-            scrollIntoView(contactoRef.current, {
-                behavior: 'smooth', block: 'start', inline: 'center'
-            });
-        }
-    };
+    if (section === 'contacto') {
+      scrollIntoView(contactoRef.current, {
+        behavior: 'smooth', block: 'start', inline: 'center'
+      })
+    }
+  }
 
-    return (
+  return (
         <Grid direction="column" width="100%" id="inicio" ref={inicioRef}>
             <Header handleClickMenu={handleClickMenu}/>
             <Grid item>
@@ -90,7 +88,7 @@ const Mobile = () => {
                             src={Banner1}
                             alt="banner-1"
                             style={{
-                                width: '100%', height: 'auto'
+                              width: '100%', height: 'auto'
                             }}
                         />
                     </div>
@@ -99,7 +97,7 @@ const Mobile = () => {
                             src={Banner2}
                             alt="banner-2"
                             style={{
-                                width: '100%', height: 'auto'
+                              width: '100%', height: 'auto'
                             }}
                         />
                     </div>
@@ -118,7 +116,7 @@ const Mobile = () => {
                     mainSrc={images[photoIndex]}
                     nextSrc={images[(photoIndex + 1) % images.length]}
                     prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-                    onCloseRequest={() => { setIsOpen(false); setPhotoIndex(0); setBrand(null); }}
+                    onCloseRequest={() => { setIsOpen(false); setPhotoIndex(0); setBrand(null) }}
                     onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
                     onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % images.length)}
                 />
@@ -131,30 +129,13 @@ const Mobile = () => {
                     showThumbs={false}
                     showStatus={false}
                 >
-                    <div>
-                        <img
-                            src={FirstBlock}
-                            alt="cuadro-1"
-                            style={{
-                                width: '100%', alignSelf: 'center'
-                            }}
-                        />
-                    </div>
-                    <div>
-                        <img
-                            src={SecondBlock}
-                            alt="cuadro-2"
-                            style={{
-                                width: '100%', alignSelf: 'center'
-                            }}
-                        />
-                    </div>
+
                 </Carousel>
             </Grid>
             <Grid
                 item
                 sx={{
-                    width: '100%', backgroundColor: '#222222', textAlign: 'center'
+                  width: '100%', backgroundColor: '#222222', textAlign: 'center'
                 }}
                 id="nosotros"
                 ref={nosotrosRef}
@@ -163,7 +144,7 @@ const Mobile = () => {
                     src={Nosotros}
                     alt="nosotros"
                     style={{
-                        height: 'auto', width: '100%', alignSelf: 'center'
+                      height: 'auto', width: '100%', alignSelf: 'center'
                     }}
                 />
             </Grid>
@@ -173,7 +154,7 @@ const Mobile = () => {
                     container
                     direction="column"
                     mt={2}
-                    sx={{backgroundColor: '#1a1a1a'}}
+                    sx={{ backgroundColor: '#1a1a1a' }}
                     justifyContent="center"
                     alignItems="center"
                 >
@@ -184,7 +165,7 @@ const Mobile = () => {
                                     src={PaiggioGroup}
                                     alt="PaiggioGroup"
                                     style={{
-                                        width: '35%', height: 'auto', alignSelf: 'center', margin: 'auto'
+                                      width: '35%', height: 'auto', alignSelf: 'center', margin: 'auto'
                                     }}
                                 />
                             </Grid>
@@ -193,7 +174,7 @@ const Mobile = () => {
                                     src={Paiggio}
                                     alt="Paiggio"
                                     style={{
-                                        width: '80%', height: 'auto', alignSelf: 'center'
+                                      width: '80%', height: 'auto', alignSelf: 'center'
                                     }}
                                 />
                             </Grid>
@@ -202,7 +183,7 @@ const Mobile = () => {
                                     src={Vespa}
                                     alt="Vespa"
                                     style={{
-                                        width: '80%', height: 'auto', alignSelf: 'center'
+                                      width: '80%', height: 'auto', alignSelf: 'center'
                                     }}
                                 />
                             </Grid>
@@ -211,7 +192,7 @@ const Mobile = () => {
                                     src={Guzzi}
                                     alt="Guzzi"
                                     style={{
-                                        width: '80%', height: 'auto', alignSelf: 'center'
+                                      width: '80%', height: 'auto', alignSelf: 'center'
                                     }}
                                 />
                             </Grid>
@@ -220,7 +201,7 @@ const Mobile = () => {
                                     src={Aprilia}
                                     alt="Aprilia"
                                     style={{
-                                        width: '80%', height: 'auto', alignSelf: 'center'
+                                      width: '80%', height: 'auto', alignSelf: 'center'
                                     }}
                                 />
                             </Grid>
@@ -280,7 +261,7 @@ const Mobile = () => {
                 <i className="fa fa-whatsapp my-float"/>
             </a>
         </Grid>
-    );
-};
+  )
+}
 
-export default Mobile;
+export default Mobile
