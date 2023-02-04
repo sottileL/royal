@@ -26,13 +26,6 @@ import getImages from '../../helpers/getImages'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import 'react-image-lightbox/style.css'
 
-// const SubtitleTypography = styled(Typography)(() => ({
-//   fontSize: '23px!important',
-//   fontWeight: 'bold !important',
-//   color: 'white',
-//   letterSpacing: '2px'
-// }))
-
 const Desktop = () => {
   const [brand, setBrand] = useState(null)
   const images = getImages(brand)
@@ -84,19 +77,14 @@ const Desktop = () => {
             <Grid item id="modelos" ref={modelosRef}>
                 <Marcas setIsOpen={setIsOpen} setBrand={setBrand}/>
             </Grid>
-            {isOpen && (
-                <SimpleSlider/>
-                // <Lightbox
-                //     mainSrc={images[photoIndex]}
-                //     nextSrc={images[(photoIndex + 1) % images.length]}
-                //     prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-                //     onCloseRequest={() => { setIsOpen(false); setPhotoIndex(0); setBrand(null) }}
-                //     onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
-                //     onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % images.length)}
-                // />
-            )}
-            <Grid
-                item
+                <SimpleSlider>
+                {
+                    images.map((image) => {
+                      return CustomSlide({ image })
+                    })
+                }
+                </SimpleSlider>
+            <Grid item
                 sx={{
                   width: '100%', backgroundColor: '#222222', textAlign: 'center'
                 }}

@@ -9,10 +9,10 @@ import Box from '@mui/material/Box'
 class CustomSlide extends Component {
   render () {
     // eslint-disable-next-line react/prop-types
-    const { index, ...props } = this.props
+    const { image } = this.props
     return (
-      <Box {...props}>
-        <img width="100%" height="auto" src={index}></img>
+      <Box sx={{ width: '100vw' }}>
+        <img width="100%" height="auto" src={image}></img>
       </Box>
     )
   }
@@ -21,19 +21,17 @@ class CustomSlide extends Component {
 export default class SimpleSlider extends Component {
   render () {
     const settings = {
-      dots: false,
       fade: true,
-      speed: 50,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: false,
-      autoplaySpeed: 500
+      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      centerMode: true,
+      pauseOnFocus: true
     }
     return (
       <div>
         <Slider {...settings}>
-          <CustomSlide index={Aprilia1} />
-          <CustomSlide index={Aprilia1} />
+          <CustomSlide image={Aprilia1} />
         </Slider>
       </div>
     )
