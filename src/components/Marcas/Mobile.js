@@ -1,33 +1,34 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from 'react';
 
-import Grid from '@mui/material/Grid';
+import React from 'react'
 
-import Aprilia from '../../images/marcas/aprilia.webp';
-import Guzzi from '../../images/marcas/guzzi.webp';
-import Piaggio from '../../images/marcas/paiggio.webp';
-import Vespa from '../../images/marcas/vespa.webp';
+import Grid from '@mui/material/Grid'
 
-const MarcasMobile = ({setIsOpen, setBrand}) => (
-    <Grid container height="300px">
+import PrimerMoto from '../../images/cuadros/1.webp'
+import SegundaMoto from '../../images/cuadros/2.webp'
+import TercerMoto from '../../images/cuadros/3.webp'
+import CuartaMoto from '../../images/cuadros/4.webp'
+import QuintaMoto from '../../images/cuadros/5.webp'
+import SextaMoto from '../../images/cuadros/6.webp'
+
+const MarcasMobile = ({ setIsOpen, setBrand }) => (
+    <Grid container xs={12} p={3}>
         <Grid
             item
             xs={6}
             sx={{
-                backgroundColor: '#1875cf', cursor: 'pointer'
+              cursor: 'pointer'
             }}
             display="flex"
             justifyContent="center"
-            onClick={() => { setBrand('piaggio'); setIsOpen(true); }}
+            onClick={() => { setBrand('classic'); setIsOpen(true) }}
         >
             <img
-                src={Piaggio}
-                alt="piaggio"
+                src={PrimerMoto}
+                alt="classic-350"
                 style={{
-                    width: '80%', alignSelf: 'center'
+                  width: '100%'
                 }}
             />
         </Grid>
@@ -35,17 +36,17 @@ const MarcasMobile = ({setIsOpen, setBrand}) => (
             item
             xs={6}
             sx={{
-                backgroundColor: '#4fd6b2', cursor: 'pointer'
+              cursor: 'pointer'
             }}
             display="flex"
             justifyContent="center"
-            onClick={() => { setBrand('vespa'); setIsOpen(true); }}
+            onClick={() => { setBrand('scram'); setIsOpen(true) }}
         >
             <img
-                src={Vespa}
-                alt="vespa"
+                src={SegundaMoto}
+                alt="scram-411"
                 style={{
-                    width: '80%', alignSelf: 'center'
+                  width: '100%'
                 }}
             />
         </Grid>
@@ -53,17 +54,17 @@ const MarcasMobile = ({setIsOpen, setBrand}) => (
             item
             xs={6}
             sx={{
-                backgroundColor: '#ff0000', cursor: 'pointer'
+              cursor: 'pointer'
             }}
             display="flex"
             justifyContent="center"
-            onClick={() => { setBrand('aprilia'); setIsOpen(true); }}
+            onClick={() => { setBrand('himalayan'); setIsOpen(true) }}
         >
             <img
-                src={Aprilia}
-                alt="aprilia"
+                src={TercerMoto}
+                alt="himalayan"
                 style={{
-                    width: '70%', alignSelf: 'center'
+                  width: '100%'
                 }}
             />
         </Grid>
@@ -71,21 +72,57 @@ const MarcasMobile = ({setIsOpen, setBrand}) => (
             item
             xs={6}
             sx={{
-                backgroundColor: 'black', cursor: 'pointer'
+              cursor: 'pointer'
             }}
             display="flex"
             justifyContent="center"
-            onClick={() => { setBrand('guzzi'); setIsOpen(true); }}
+            onClick={() => { setBrand('interceptor'); setIsOpen(true) }}
         >
             <img
-                src={Guzzi}
-                alt="guzzi"
+                src={CuartaMoto}
+                alt="interceptor"
                 style={{
-                    width: '80%', alignSelf: 'center'
+                  width: '100%'
+                }}
+            />
+        </Grid>
+        <Grid
+            item
+            xs={6}
+            sx={{
+              cursor: 'pointer'
+            }}
+            display="flex"
+            justifyContent="center"
+            onClick={() => { setBrand('continental'); setIsOpen(true) }}
+        >
+            <img
+                src={QuintaMoto}
+                alt="continental"
+                style={{
+                  width: '100%'
+                }}
+            />
+        </Grid>
+        <Grid
+            item
+            xs={6}
+            sx={{
+              cursor: 'pointer'
+            }}
+            display="flex"
+            justifyContent="center"
+            onClick={() => { setBrand('meteor'); setIsOpen(true) }}
+        >
+            <img
+                src={SextaMoto}
+                alt="meteor"
+                style={{
+                  width: '100%'
                 }}
             />
         </Grid>
     </Grid>
-);
+)
 
-export default MarcasMobile;
+export default MarcasMobile

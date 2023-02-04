@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 // import { styled } from '@mui/styles'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
@@ -8,24 +8,19 @@ import { Box } from '@mui/system'
 import LocationCityRounded from '@mui/icons-material/LocationOn'
 import WhatsApp from '@mui/icons-material/WhatsApp'
 
-// import { Carousel } from 'react-responsive-carousel'
-// import Lightbox from 'react-image-lightbox'
+import Lightbox from 'react-image-lightbox'
 
 // import getImages from '../../helpers/getImages'
 
 import ContactForm from '../../components/ContactForm/Desktop'
 import Header from '../../components/Header/Desktop'
-// import Marcas from '../../components/Marcas/Desktop'
+import Marcas from '../../components/Marcas/Desktop'
 
 import Banner1 from '../../images/banner-1.webp'
-import PrimerMoto from '../../images/cuadros/1.webp'
-import SegundaMoto from '../../images/cuadros/2.webp'
-import TercerMoto from '../../images/cuadros/3.webp'
-import CuartaMoto from '../../images/cuadros/4.webp'
-import QuintaMoto from '../../images/cuadros/5.webp'
-import SextaMoto from '../../images/cuadros/6.webp'
 import Logo from '../../images/logo.webp'
 import Nosotros from '../../images/nosotros.webp'
+
+import getImages from '../../helpers/getImages'
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import 'react-image-lightbox/style.css'
@@ -38,10 +33,15 @@ import 'react-image-lightbox/style.css'
 // }))
 
 const Desktop = () => {
-//   const [brand, setBrand] = useState(null)
-  //   const images = getImages(brand)
-  //   const [photoIndex, setPhotoIndex] = useState(0)
-  //   const [isOpen, setIsOpen] = useState(false)
+  const [brand, setBrand] = useState(null)
+  const images = getImages(brand)
+  const [photoIndex, setPhotoIndex] = useState(0)
+  const [isOpen, setIsOpen] = useState(false)
+
+  console.log(images)
+  console.log(photoIndex)
+  console.log(isOpen)
+  console.log(setPhotoIndex)
 
   const inicioRef = useRef(null)
   const modelosRef = useRef(null)
@@ -79,13 +79,11 @@ const Desktop = () => {
                             }}
                         />
                     </div>
-                {/* <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
-                </Carousel> */}
             </Grid>
-            {/* <Grid item id="marcas" ref={modelosRef}>
+            <Grid item id="modelos" ref={modelosRef}>
                 <Marcas setIsOpen={setIsOpen} setBrand={setBrand}/>
-            </Grid> */}
-            {/* {isOpen && (
+            </Grid>
+            {isOpen && (
                 <Lightbox
                     mainSrc={images[photoIndex]}
                     nextSrc={images[(photoIndex + 1) % images.length]}
@@ -94,51 +92,7 @@ const Desktop = () => {
                     onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
                     onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % images.length)}
                 />
-            )} */}
-            <Grid container padding={10}>
-                    <img
-                        src={PrimerMoto}
-                        alt="cuadro-1"
-                        style={{
-                          width: '33%', alignSelf: 'center'
-                        }}
-                    />
-                    <img
-                        src={SegundaMoto}
-                        alt="cuadro-2"
-                        style={{
-                          width: '33%', alignSelf: 'center'
-                        }}
-                    />
-                    <img
-                        src={TercerMoto}
-                        alt="cuadro-2"
-                        style={{
-                          width: '33%', alignSelf: 'center'
-                        }}
-                    />
-                    <img
-                        src={CuartaMoto}
-                        alt="cuadro-2"
-                        style={{
-                          width: '33%', alignSelf: 'center'
-                        }}
-                    />
-                    <img
-                        src={QuintaMoto}
-                        alt="cuadro-2"
-                        style={{
-                          width: '33%', alignSelf: 'center'
-                        }}
-                    />
-                    <img
-                        src={SextaMoto}
-                        alt="cuadro-2"
-                        style={{
-                          width: '33%', alignSelf: 'center'
-                        }}
-                    />
-            </Grid>
+            )}
             <Grid
                 item
                 sx={{

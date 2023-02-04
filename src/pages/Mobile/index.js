@@ -1,17 +1,13 @@
 import React, { useRef, useState } from 'react'
 import { scrollIntoView } from 'seamless-scroll-polyfill'
-import { styled } from '@mui/styles'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
 import { Box } from '@mui/system'
 
-import Instagram from '@mui/icons-material/Instagram'
 import LocationCityRounded from '@mui/icons-material/LocationOn'
 import WhatsApp from '@mui/icons-material/WhatsApp'
-import FacebookOutlined from '@mui/icons-material/FacebookOutlined'
 
-import { Carousel } from 'react-responsive-carousel'
 import Lightbox from 'react-image-lightbox'
 
 import getImages from '../../helpers/getImages'
@@ -21,25 +17,11 @@ import Header from '../../components/Header/Mobile'
 import Marcas from '../../components/Marcas/Mobile'
 
 import Banner1 from '../../images/banner-mobile-1.webp'
-import Banner2 from '../../images/banner-mobile-2.webp'
 import Nosotros from '../../images/nosotros.webp'
-
-import Aprilia from '../../images/marcas/aprilia.webp'
-import Guzzi from '../../images/marcas/guzzi.webp'
-import Paiggio from '../../images/marcas/paiggio.webp'
-import PaiggioGroup from '../../images/marcas/paiggioGroup.webp'
-import Vespa from '../../images/marcas/vespa.webp'
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import 'react-image-lightbox/style.css'
 import './style.css'
-
-const SubtitleTypography = styled(Typography)(() => ({
-  fontSize: '1.2rem!important',
-  fontWeight: 'bold !important',
-  color: 'white',
-  letterSpacing: '2px'
-}))
 
 const Mobile = () => {
   const [brand, setBrand] = useState(null)
@@ -48,7 +30,7 @@ const Mobile = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const inicioRef = useRef(null)
-  const marcasRef = useRef(null)
+  const modelosRef = useRef(null)
   const nosotrosRef = useRef(null)
   const contactoRef = useRef(null)
 
@@ -59,8 +41,8 @@ const Mobile = () => {
       })
     }
 
-    if (section === 'marcas') {
-      scrollIntoView(marcasRef.current, {
+    if (section === 'modelos') {
+      scrollIntoView(modelosRef.current, {
         behavior: 'smooth', block: 'start', inline: 'center'
       })
     }
@@ -82,33 +64,17 @@ const Mobile = () => {
         <Grid direction="column" width="100%" id="inicio" ref={inicioRef}>
             <Header handleClickMenu={handleClickMenu}/>
             <Grid item>
-                <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
-                    <div>
-                        <img
-                            src={Banner1}
-                            alt="banner-1"
-                            style={{
-                              width: '100%', height: 'auto'
-                            }}
-                        />
-                    </div>
-                    <div>
-                        <img
-                            src={Banner2}
-                            alt="banner-2"
-                            style={{
-                              width: '100%', height: 'auto'
-                            }}
-                        />
-                    </div>
-                </Carousel>
-                <SubtitleTypography my={4} px={1} textAlign="center">
-                    MÁS QUE UN LUGAR PARA VISITAR, UN
-                    <br/>
-                    DESTINO AL QUE LA GENTE QUIERE VOLVER
-                </SubtitleTypography>
+                <div>
+                    <img
+                        src={Banner1}
+                        alt="banner-1"
+                        style={{
+                          width: '100%', height: 'auto'
+                        }}
+                    />
+                </div>
             </Grid>
-            <Grid item id="marcas" ref={marcasRef}>
+            <Grid item id="marcas" ref={modelosRef}>
                 <Marcas setIsOpen={setIsOpen} setBrand={setBrand}/>
             </Grid>
             {isOpen && (
@@ -121,17 +87,6 @@ const Mobile = () => {
                     onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % images.length)}
                 />
             )}
-            <Grid item id="cuadros" display="flex" my={6} px={1} spacing={10} justifyContent="center" alignItems="center">
-                <Carousel
-                    className="cuadrosMobile"
-                    autoPlay
-                    infiniteLoop
-                    showThumbs={false}
-                    showStatus={false}
-                >
-
-                </Carousel>
-            </Grid>
             <Grid
                 item
                 sx={{
@@ -158,55 +113,6 @@ const Mobile = () => {
                     justifyContent="center"
                     alignItems="center"
                 >
-                    <Grid item xs={12} mx={2}>
-                        <Grid container direction="row">
-                            <Grid item xs={12} my={3} display="flex" justifyContent="center" alignItems="center">
-                                <img
-                                    src={PaiggioGroup}
-                                    alt="PaiggioGroup"
-                                    style={{
-                                      width: '35%', height: 'auto', alignSelf: 'center', margin: 'auto'
-                                    }}
-                                />
-                            </Grid>
-                            <Grid item xs={3} display="flex" justifyContent="center" alignItems="center">
-                                <img
-                                    src={Paiggio}
-                                    alt="Paiggio"
-                                    style={{
-                                      width: '80%', height: 'auto', alignSelf: 'center'
-                                    }}
-                                />
-                            </Grid>
-                            <Grid item xs={3} display="flex" justifyContent="center" alignItems="center">
-                                <img
-                                    src={Vespa}
-                                    alt="Vespa"
-                                    style={{
-                                      width: '80%', height: 'auto', alignSelf: 'center'
-                                    }}
-                                />
-                            </Grid>
-                            <Grid item xs={3} display="flex" justifyContent="center" alignItems="center">
-                                <img
-                                    src={Guzzi}
-                                    alt="Guzzi"
-                                    style={{
-                                      width: '80%', height: 'auto', alignSelf: 'center'
-                                    }}
-                                />
-                            </Grid>
-                            <Grid item xs={3} display="flex" justifyContent="center" alignItems="center">
-                                <img
-                                    src={Aprilia}
-                                    alt="Aprilia"
-                                    style={{
-                                      width: '80%', height: 'auto', alignSelf: 'center'
-                                    }}
-                                />
-                            </Grid>
-                        </Grid>
-                    </Grid>
                     <Grid item mt={2} xs={12} display="flex" justifyContent="center" alignItems="center">
                         <Box>
                             <Typography fontFamily="Arial" color="white" fontWeight="bold" fontSize={15} textAlign="center">
@@ -216,18 +122,10 @@ const Mobile = () => {
                                 <Grid container direction="column" mt={1} mb={2}>
                                     <Grid container direction="row" justifyContent="flex-start" alignItems="center">
                                         <Grid item mr={1}>
-                                            <FacebookOutlined/>
+                                            <WhatsApp/>
                                         </Grid>
                                         <Grid item>
-                                            motoplex.rosario
-                                        </Grid>
-                                    </Grid>
-                                    <Grid container direction="row" justifyContent="flex-start" alignItems="center">
-                                        <Grid item mr={1}>
-                                            <Instagram/>
-                                        </Grid>
-                                        <Grid item>
-                                            motoplex.rosario
+                                            Post venta: 3364023223
                                         </Grid>
                                     </Grid>
                                     <Grid container direction="row" justifyContent="flex-start" alignItems="center">
@@ -235,7 +133,7 @@ const Mobile = () => {
                                             <WhatsApp/>
                                         </Grid>
                                         <Grid item>
-                                            3412129143
+                                            Ventas: 3364023222
                                         </Grid>
                                     </Grid>
                                     <Grid container direction="row" justifyContent="flex-start" alignItems="center">
@@ -243,7 +141,8 @@ const Mobile = () => {
                                             <LocationCityRounded/>
                                         </Grid>
                                         <Grid item>
-                                            Av. Eva Perón 5616
+                                            Av. Presidente Peron 2020, <br></br>
+                                            San Nicolas de los Arroyos.
                                         </Grid>
                                     </Grid>
                                 </Grid>
