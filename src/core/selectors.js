@@ -1,3 +1,3 @@
-import * as MotoPlex from './state/MotoPlex/selectors';
+import * as MotoPlex from './state/MotoPlex/selectors'
 
-export default {MotoPlex};
+export default { MotoPlex }

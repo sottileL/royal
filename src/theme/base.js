@@ -1,8 +1,8 @@
 /* eslint-disable import/prefer-default-export */
-import {LightTheme} from './theme';
+import { LightTheme } from './theme'
 
-const themeMap = {LightTheme};
+const themeMap = { LightTheme }
 
-export function themeCreator(theme) {
-    return themeMap[theme];
+export function themeCreator (theme) {
+  return themeMap[theme]
 }

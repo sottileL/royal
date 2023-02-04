@@ -1,5 +1,5 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux'
 
-import motoPlex from './state/MotoPlex/reducers';
+import motoPlex from './state/MotoPlex/reducers'
 
-export default combineReducers({motoPlex});
+export default combineReducers({ motoPlex })

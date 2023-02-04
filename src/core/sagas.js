@@ -1,9 +1,9 @@
-import {all} from 'redux-saga/effects';
+import { all } from 'redux-saga/effects'
 
-import MotoPlexSagas from './state/MotoPlex/sagas';
+import MotoPlexSagas from './state/MotoPlex/sagas'
 
-export default function* rootSagas() {
-    yield all([
-        MotoPlexSagas()
-    ]);
+export default function * rootSagas () {
+  yield all([
+    MotoPlexSagas()
+  ])
 }
