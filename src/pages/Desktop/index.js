@@ -8,13 +8,14 @@ import { Box } from '@mui/system'
 import LocationCityRounded from '@mui/icons-material/LocationOn'
 import WhatsApp from '@mui/icons-material/WhatsApp'
 
-import Lightbox from 'react-image-lightbox'
+// import Lightbox from 'react-image-lightbox'
 
 // import getImages from '../../helpers/getImages'
 
 import ContactForm from '../../components/ContactForm/Desktop'
 import Header from '../../components/Header/Desktop'
 import Marcas from '../../components/Marcas/Desktop'
+import SimpleSlider from '../../components/SimpleSlider'
 
 import Banner1 from '../../images/banner-1.webp'
 import Logo from '../../images/logo.webp'
@@ -84,14 +85,15 @@ const Desktop = () => {
                 <Marcas setIsOpen={setIsOpen} setBrand={setBrand}/>
             </Grid>
             {isOpen && (
-                <Lightbox
-                    mainSrc={images[photoIndex]}
-                    nextSrc={images[(photoIndex + 1) % images.length]}
-                    prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-                    onCloseRequest={() => { setIsOpen(false); setPhotoIndex(0); setBrand(null) }}
-                    onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
-                    onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % images.length)}
-                />
+                <SimpleSlider/>
+                // <Lightbox
+                //     mainSrc={images[photoIndex]}
+                //     nextSrc={images[(photoIndex + 1) % images.length]}
+                //     prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+                //     onCloseRequest={() => { setIsOpen(false); setPhotoIndex(0); setBrand(null) }}
+                //     onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
+                //     onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % images.length)}
+                // />
             )}
             <Grid
                 item
