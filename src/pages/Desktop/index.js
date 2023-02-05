@@ -17,6 +17,9 @@ import Header from '../../components/Header/Desktop'
 import Marcas from '../../components/Marcas/Desktop'
 import SimpleSlider from '../../components/SimpleSlider'
 
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+
 import Banner1 from '../../images/banner-1.webp'
 import Logo from '../../images/logo.webp'
 import Nosotros from '../../images/nosotros.webp'
@@ -77,13 +80,7 @@ const Desktop = () => {
             <Grid item id="modelos" ref={modelosRef}>
                 <Marcas setIsOpen={setIsOpen} setBrand={setBrand}/>
             </Grid>
-                <SimpleSlider>
-                {
-                    images.map((image) => {
-                      return CustomSlide({ image })
-                    })
-                }
-                </SimpleSlider>
+                <SimpleSlider/>
             <Grid item
                 sx={{
                   width: '100%', backgroundColor: '#222222', textAlign: 'center'
@@ -113,7 +110,7 @@ const Desktop = () => {
                     </Grid>
                     <Grid item xs={4} display="flex" justifyContent="center" alignItems="center">
                         <Box>
-                            <Typography fontFamily="Arial" color="white" fontWeight="bold" fontSize={15} textAlign="center">
+                            <Typography fontFamily="Arial" color= "white" fontWeight="bold" fontSize={15} textAlign="center">
                                 CONTACTO:
                             </Typography>
                             <Typography fontFamily="Arial" color="white" fontSize={13}>
