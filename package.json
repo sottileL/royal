@@ -1,7 +1,7 @@
 {
-  "name": "motoplex",
+  "name": "royal-enfield",
   "version": "0.1.0",
-  "homepage": "https://motoplexstore.com.ar/",
+  "homepage": "https://royalenfieldstore.com.ar/",
   "private": true,
   "dependencies": {
     "@babel/eslint-parser": "^7.17.0",

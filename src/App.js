@@ -5,13 +5,13 @@ import './fonts/FSEmeric/stylesheet.css'
 import ThemeProvider from './theme/ThemeProvider'
 import { LightTheme } from './theme/theme'
 
-import Motoplex from './pages'
+import RoyalEnfield from './pages'
 
 const App = () => (
     <ThemeProvider theme={LightTheme}>
         <BrowserRouter>
             <Switch>
-                <Route path="/" key="Motoplex" component={Motoplex}/>
+                <Route path="/" key="RoyalEnfield" component={RoyalEnfield}/>
             </Switch>
         </BrowserRouter>
     </ThemeProvider>

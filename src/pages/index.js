@@ -4,8 +4,8 @@ import { isMobile } from 'react-device-detect'
 import Desktop from './Desktop'
 import Mobile from './Mobile'
 
-const Motoplex = () => (
+const RoyalEnfield = () => (
   isMobile ? <Mobile/> : <Desktop/>
 )
 
-export default Motoplex
+export default RoyalEnfield

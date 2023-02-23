@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // import Aprilia1 from '../../images/banner-1.webp'
 
 import React, { Component } from 'react'

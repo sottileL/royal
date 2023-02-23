@@ -50,7 +50,7 @@ function * submitEmail (form) {
   }
 }
 
-export default function * MotoPlexSagas () {
+export default function * RoyalEnfieldSagas () {
   yield all([
     takeLatest(SUBMIT_EMAIL, submitEmail)
   ])

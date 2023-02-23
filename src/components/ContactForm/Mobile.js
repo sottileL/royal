@@ -10,8 +10,8 @@ import Grid from '@mui/material/Grid'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 
-import Actions from '../../core/state/MotoPlex/actions'
-import { getError, getIsLoading } from '../../core/state/MotoPlex/selectors'
+import Actions from '../../core/state/RoyalEnfield/actions'
+import { getError, getIsLoading } from '../../core/state/RoyalEnfield/selectors'
 
 import validationSchema from './validationSchema'
 

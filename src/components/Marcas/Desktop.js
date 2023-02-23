@@ -12,10 +12,9 @@ import SextaMoto from '../../images/cuadros/6.webp'
 import Grid from '@mui/material/Grid'
 
 const MarcasDesktop = ({ setIsOpen, setBrand }) => (
-
     <Grid container md={12} padding={10} justifyContent="center">
         <Grid container md={9} direction="row">
-            <Grid item xs={4} sx={{ cursor: 'pointer' }} onClick={() => { setBrand('classic'); setIsOpen(true) }} >
+            <Grid item xs={4} onClick={() => { setBrand('classic'); setIsOpen(true) }} >
                 <img
                     src={PrimerMoto}
                     alt="classic-350"
@@ -24,7 +23,7 @@ const MarcasDesktop = ({ setIsOpen, setBrand }) => (
                     }}
                 />
             </Grid>
-            <Grid item xs={4} sx={{ cursor: 'pointer' }} onClick={() => { setBrand('scram'); setIsOpen(true) }} >
+            <Grid item xs={4} onClick={() => { setBrand('scram'); setIsOpen(true) }} >
                 <img
                     src={SegundaMoto}
                     alt="scram-411"
@@ -33,7 +32,7 @@ const MarcasDesktop = ({ setIsOpen, setBrand }) => (
                     }}
                 />
                 </Grid>
-                <Grid item xs={4} sx={{ cursor: 'pointer' }} onClick={() => { setBrand('himalayan'); setIsOpen(true) }} >
+                <Grid item xs={4} onClick={() => { setBrand('himalayan'); setIsOpen(true) }} >
                 <img
                     src={TercerMoto}
                     alt="himalayan"
@@ -44,7 +43,8 @@ const MarcasDesktop = ({ setIsOpen, setBrand }) => (
                 </Grid>
         </Grid>
         <Grid container md={9} sx={{ marginTop: -1 }}>
-            <Grid item xs={4} sx={{ cursor: 'pointer' }} onClick={() => { setBrand('interceptor'); setIsOpen(true) }}>
+            <Grid
+                item xs={4} onClick={() => { setBrand('interceptor'); setIsOpen(true) }}>
                 <img
                     src={CuartaMoto}
                     alt="interceptor"
@@ -53,7 +53,7 @@ const MarcasDesktop = ({ setIsOpen, setBrand }) => (
                     }}
                 />
             </Grid>
-            <Grid item xs={4} sx={{ cursor: 'pointer' }} onClick={() => { setBrand('continental'); setIsOpen(true) }}>
+            <Grid item xs={4} onClick={() => { setBrand('continental'); setIsOpen(true) }}>
                 <img
                     src={QuintaMoto}
                     alt="continental"
@@ -62,7 +62,7 @@ const MarcasDesktop = ({ setIsOpen, setBrand }) => (
                     }}
                 />
             </Grid>
-            <Grid item xs={4} sx={{ cursor: 'pointer' }} onClick={() => { setBrand('meteor'); setIsOpen(true) }}>
+            <Grid item xs={4} onClick={() => { setBrand('meteor'); setIsOpen(true) }}>
                 <img
                     src={SextaMoto}
                     alt="meteor"

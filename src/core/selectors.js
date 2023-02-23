@@ -1,3 +1,3 @@
-import * as MotoPlex from './state/MotoPlex/selectors'
+import * as RoyalEnfield from './state/RoyalEnfield/selectors'
 
-export default { MotoPlex }
+export default { RoyalEnfield }
