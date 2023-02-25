@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
 
-import motoPlex from './state/MotoPlex/reducers'
+import royalEnfield from './state/RoyalEnfield/reducers'
 
-export default combineReducers({ motoPlex })
+export default combineReducers({ royalEnfield })

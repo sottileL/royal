@@ -1,9 +1,9 @@
 import { all } from 'redux-saga/effects'
 
-import MotoPlexSagas from './state/MotoPlex/sagas'
+import RoyalEnfieldSagas from './state/RoyalEnfield/sagas'
 
 export default function * rootSagas () {
   yield all([
-    MotoPlexSagas()
+    RoyalEnfieldSagas()
   ])
 }

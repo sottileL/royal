@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
-import MotoPlex from './state/MotoPlex/actions'
+import RoyalEnfield from './state/RoyalEnfield/actions'
 
 export {
-  MotoPlex
+  RoyalEnfield
 }

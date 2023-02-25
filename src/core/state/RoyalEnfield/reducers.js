@@ -8,7 +8,7 @@ const initialState = {
   error: ''
 }
 
-const motoPlexReducer = (state = { ...initialState }, { type, ...props }) => {
+const royalEnfieldReducer = (state = { ...initialState }, { type, ...props }) => {
   switch (type) {
     case SET_IS_LOADING: {
       return {
@@ -25,4 +25,4 @@ const motoPlexReducer = (state = { ...initialState }, { type, ...props }) => {
   }
 }
 
-export default motoPlexReducer
+export default royalEnfieldReducer

@@ -1,26 +1,24 @@
+/* eslint-disable no-unused-vars */
 import React, { useRef, useState } from 'react'
-// import { styled } from '@mui/styles'
+
+import { Carousel } from 'react-responsive-carousel'
+
+import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
-
-import { Box } from '@mui/system'
 
 import LocationCityRounded from '@mui/icons-material/LocationOn'
 import WhatsApp from '@mui/icons-material/WhatsApp'
 
-// import Lightbox from 'react-image-lightbox'
-
-// import getImages from '../../helpers/getImages'
-
 import ContactForm from '../../components/ContactForm/Desktop'
 import Header from '../../components/Header/Desktop'
 import Marcas from '../../components/Marcas/Desktop'
-import SimpleSlider from '../../components/SimpleSlider'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import Banner1 from '../../images/banner-1.webp'
+import Banner2 from '../../images/banner-2.webp'
 import Logo from '../../images/logo.webp'
 import Nosotros from '../../images/nosotros.webp'
 
@@ -34,11 +32,6 @@ const Desktop = () => {
   const images = getImages(brand)
   const [photoIndex, setPhotoIndex] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
-
-  console.log(images)
-  console.log(photoIndex)
-  console.log(isOpen)
-  console.log(setPhotoIndex)
 
   const inicioRef = useRef(null)
   const modelosRef = useRef(null)
@@ -67,6 +60,7 @@ const Desktop = () => {
         <Grid direction="column" width="100%" id="inicio" ref={inicioRef}>
             <Header handleClickMenu={handleClickMenu}/>
             <Grid item>
+                <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
                     <div>
                         <img
                             src={Banner1}
@@ -76,11 +70,20 @@ const Desktop = () => {
                             }}
                         />
                     </div>
+                    <div>
+                        <img
+                            src={Banner2}
+                            alt="banner-2"
+                            style={{
+                              width: '100%', height: 'auto'
+                            }}
+                        />
+                    </div>
+                </Carousel>
             </Grid>
             <Grid item id="modelos" ref={modelosRef}>
                 <Marcas setIsOpen={setIsOpen} setBrand={setBrand}/>
             </Grid>
-                <SimpleSlider/>
             <Grid item
                 sx={{
                   width: '100%', backgroundColor: '#222222', textAlign: 'center'
@@ -115,24 +118,24 @@ const Desktop = () => {
                             </Typography>
                             <Typography fontFamily="Arial" color="white" fontSize={13}>
                                 <Grid container direction="column" mt={2}>
-                                    <Grid container direction="row" justifyContent="center" alignItems="center">
-                                        <Grid item mr={1} pl={1}>
+                                    <Grid container direction="row" justifyContent="flex-start" alignItems="center">
+                                        <Grid item mr={1}>
                                             <WhatsApp/>
                                         </Grid>
                                         <Grid item>
                                             Post venta: 3364023223
                                         </Grid>
                                     </Grid>
-                                    <Grid container direction="row" justifyContent="center" alignItems="center">
-                                        <Grid item mr={1.4}>
+                                    <Grid container direction="row" justifyContent="flex-start" alignItems="center">
+                                        <Grid item mr={1}>
                                             <WhatsApp/>
                                         </Grid>
                                         <Grid item>
                                             Ventas: 33640223222
                                         </Grid>
                                     </Grid>
-                                    <Grid container direction="row" justifyContent="center" alignItems="center">
-                                        <Grid item mr={1} pl={2.5}>
+                                    <Grid container direction="row" justifyContent="flex-start" alignItems="center">
+                                        <Grid item mr={1}>
                                         <LocationCityRounded/>
                                         </Grid>
                                         <Grid item>
@@ -147,7 +150,7 @@ const Desktop = () => {
                 </Grid>
             </Grid>
             <a
-                href="https://api.whatsapp.com/send?phone=+5493412129143&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20..."
+                href="https://api.whatsapp.com/send?phone=+54933640223222&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20..."
                 className="float"
                 target="_blank"
                 rel="noreferrer"

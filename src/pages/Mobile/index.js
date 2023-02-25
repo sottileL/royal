@@ -1,14 +1,16 @@
+/* eslint-disable no-unused-vars */
 import React, { useRef, useState } from 'react'
 import { scrollIntoView } from 'seamless-scroll-polyfill'
+
+import { Carousel } from 'react-responsive-carousel'
+import Lightbox from 'react-image-lightbox'
+
+import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
-import { Box } from '@mui/system'
-
 import LocationCityRounded from '@mui/icons-material/LocationOn'
 import WhatsApp from '@mui/icons-material/WhatsApp'
-
-import Lightbox from 'react-image-lightbox'
 
 import getImages from '../../helpers/getImages'
 
@@ -17,6 +19,8 @@ import Header from '../../components/Header/Mobile'
 import Marcas from '../../components/Marcas/Mobile'
 
 import Banner1 from '../../images/banner-mobile-1.webp'
+import Banner2 from '../../images/banner-mobile-2.webp'
+
 import Nosotros from '../../images/nosotros.webp'
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -64,20 +68,31 @@ const Mobile = () => {
         <Grid direction="column" width="100%" id="inicio" ref={inicioRef}>
             <Header handleClickMenu={handleClickMenu}/>
             <Grid item>
-                <div>
-                    <img
-                        src={Banner1}
-                        alt="banner-1"
-                        style={{
-                          width: '100%', height: 'auto'
-                        }}
-                    />
-                </div>
+                <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
+                    <div>
+                        <img
+                            src={Banner1}
+                            alt="banner-1"
+                            style={{
+                              width: '100%', height: 'auto'
+                            }}
+                        />
+                    </div>
+                    <div>
+                        <img
+                            src={Banner2}
+                            alt="banner-2"
+                            style={{
+                              width: '100%', height: 'auto'
+                            }}
+                        />
+                    </div>
+                </Carousel>
             </Grid>
             <Grid item id="marcas" ref={modelosRef}>
                 <Marcas setIsOpen={setIsOpen} setBrand={setBrand}/>
             </Grid>
-            {isOpen && (
+            {/* {isOpen && (
                 <Lightbox
                     mainSrc={images[photoIndex]}
                     nextSrc={images[(photoIndex + 1) % images.length]}
@@ -86,7 +101,7 @@ const Mobile = () => {
                     onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
                     onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % images.length)}
                 />
-            )}
+            )} */}
             <Grid
                 item
                 sx={{
@@ -152,7 +167,7 @@ const Mobile = () => {
                 </Grid>
             </Grid>
             <a
-                href="https://api.whatsapp.com/send?phone=+5493412129143&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20..."
+                href="https://api.whatsapp.com/send?phone=+5493364023222&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20..."
                 className="float"
                 target="_blank"
                 rel="noreferrer"

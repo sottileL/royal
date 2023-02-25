@@ -1,5 +1,5 @@
 /* eslint-disable */
-class Motoplex {
+class RoyalEnfield {
     constructor() {
         this.sendEmail = this.sendEmail.bind(this);
     }
@@ -13,4 +13,4 @@ class Motoplex {
 
 }
 
-export default new Motoplex();
+export default new RoyalEnfield();
