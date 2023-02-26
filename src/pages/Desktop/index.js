@@ -1,11 +1,18 @@
 /* eslint-disable no-unused-vars */
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
+import { styled } from '@mui/styles'
 
 import { Carousel } from 'react-responsive-carousel'
 
 import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
+import getImages from '../../helpers/getImages'
+import SimpleSlider from '../../components/SimpleSlider'
+import { classic, scram } from '../../data/data'
+
+import Slider from 'react-slick'
 
 import LocationCityRounded from '@mui/icons-material/LocationOn'
 import WhatsApp from '@mui/icons-material/WhatsApp'
@@ -22,16 +29,36 @@ import Banner2 from '../../images/banner-2.webp'
 import Logo from '../../images/logo.webp'
 import Nosotros from '../../images/nosotros.webp'
 
-import getImages from '../../helpers/getImages'
-
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import 'react-image-lightbox/style.css'
+
+import distance from '../../images/specs/distance.svg'
+import oil from '../../images/specs/oil.svg'
+import enigne from '../../images/specs/engine.svg'
+import thunder from '../../images/specs/thunder.svg'
+
+const TitleNavbar = styled(Typography)(() => ({
+  fontSize: '1.1rem!important',
+  fontWeight: 'bold !important',
+  color: 'white',
+  paddingLeft: 25,
+  letterSpacing: '3px',
+  textDecoration: 'none'
+}))
+
+const SpecsTypography = styled(Typography)(() => ({
+  fontSize: '0.8rem',
+  textAlign: 'center',
+  color: 'white',
+  textDecoration: 'none'
+}))
 
 const Desktop = () => {
   const [brand, setBrand] = useState(null)
   const images = getImages(brand)
   const [photoIndex, setPhotoIndex] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
+  const [arrayToMap, setArrayToMap] = useState(classic)
 
   const inicioRef = useRef(null)
   const modelosRef = useRef(null)
@@ -55,6 +82,12 @@ const Desktop = () => {
       contactoRef.current.scrollIntoView({ behavior: 'smooth' })
     }
   }
+
+  useEffect(() => {
+    console.log('luciano', brand)
+    setArrayToMap(brand)
+    console.log('luciano', arrayToMap)
+  }, [brand])
 
   return (
         <Grid direction="column" width="100%" id="inicio" ref={inicioRef}>
@@ -84,6 +117,99 @@ const Desktop = () => {
             <Grid item id="modelos" ref={modelosRef}>
                 <Marcas setIsOpen={setIsOpen} setBrand={setBrand}/>
             </Grid>
+            {isOpen && (
+                <Slider>
+                    {classic.map((item) => (
+                // eslint-disable-next-line react/jsx-key
+                <Box sx={{ width: '100vw' }}>
+                    <img width="100%" height="auto" src={item.image}></img>
+                    {/* {true && ( */}
+                        <Box sx={{ backgroundColor: '#201c1c', paddingBottom: 6 }} >
+                        <TitleNavbar sx={{ display: 'flex', justifyContent: 'center', paddingTop: 2, paddingBottom: 1 }}>ESPECIFICACIONES</TitleNavbar>
+                        <Grid container direction="row" sx={{ pt: 3 }}>
+                            <Grid item md={3} display="flex" justifyContent="center">
+                                <Box md={3} xs={3} >
+                                    <img src={thunder} style={{
+                                      marginLeft: 'auto',
+                                      marginRight: 'auto',
+                                      width: 'auto',
+                                      height: '80px',
+                                      backgroundColor: 'white',
+                                      borderRadius: '50%',
+                                      marginBottom: 10
+                                    }}/>
+                                    <SpecsTypography>
+                                        POTENCIA <br></br>
+                                        {item.potencia1}<br></br>
+                                        {item.potencia2}
+                                    </SpecsTypography>
+                                </Box>
+                            </Grid>
+                            <Grid item md={3} display="flex" justifyContent="center">
+                                <Box md={3} xs={3}>
+                                    <img src={enigne} style={{
+                                      marginLeft: 'auto',
+                                      marginRight: 'auto',
+                                      width: 'auto',
+                                      height: '80px',
+                                      backgroundColor: 'white',
+                                      borderRadius: '50%',
+                                      marginBottom: 10
+                                    }}/>
+                                <SpecsTypography>
+                                    CILINDRADA <br></br>
+                                    {item.cilindrada1}<br></br>
+                                    {item.cilindrada2}
+                                </SpecsTypography>
+                                </Box>
+                            </Grid>
+                            <Grid item md={3} display="flex" justifyContent="center">
+                                <Box md={3} xs={3}>
+                                    <img src={oil} style={{
+                                      marginLeft: 'auto',
+                                      marginRight: 'auto',
+                                      width: 'auto',
+                                      height: '80px',
+                                      backgroundColor: 'white',
+                                      borderRadius: '50%',
+                                      marginBottom: 10
+                                    }}/>
+                                    <SpecsTypography>
+                                        CAPACIDAD <br></br>
+                                        {item.capacidad1}<br></br>
+                                        {item.capacidad2}
+                                    </SpecsTypography>
+                                </Box>
+                            </Grid>
+                            <Grid item md={3} display="flex" justifyContent="center">
+                                <Box md={3} xs={3}>
+                                    <img src={distance} style={{
+                                      marginLeft: 'auto',
+                                      marginRight: 'auto',
+                                      width: 'auto',
+                                      height: '80px',
+                                      backgroundColor: 'white',
+                                      borderRadius: '50%',
+                                      marginBottom: 10
+                                    }}/>
+                                <SpecsTypography>
+                                    ALTURA LIBRE <br></br>
+                                    {item.alturalibre1}<br></br>
+                                    {item.alturalibre2}
+                                </SpecsTypography>
+                            </Box>
+                            </Grid>
+                        </Grid>
+                        <Box display="flex" justifyContent="center" sx={{ paddingTop: 4 }}>
+                            <Button sx={{ backgroundColor: 'white', color: 'black', padding: 1, fontSize: 10 }}>
+                            DESCARGAR FICHA TÉCNICA
+                            </Button>
+                        </Box>
+                        </Box>
+                    </Box>
+                    ))}
+                </Slider>
+            )}
             <Grid item
                 sx={{
                   width: '100%', backgroundColor: '#222222', textAlign: 'center'

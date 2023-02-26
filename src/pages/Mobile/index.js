@@ -92,7 +92,7 @@ const Mobile = () => {
             <Grid item id="marcas" ref={modelosRef}>
                 <Marcas setIsOpen={setIsOpen} setBrand={setBrand}/>
             </Grid>
-            {/* {isOpen && (
+            {isOpen && (
                 <Lightbox
                     mainSrc={images[photoIndex]}
                     nextSrc={images[(photoIndex + 1) % images.length]}
@@ -101,7 +101,7 @@ const Mobile = () => {
                     onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
                     onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % images.length)}
                 />
-            )} */}
+            )}
             <Grid
                 item
                 sx={{

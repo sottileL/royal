@@ -1,52 +1,47 @@
 /* eslint-disable no-empty */
-import Aprilia1 from '../images/gallery/aprilia/APRILIA_01.jpg'
-import Aprilia2 from '../images/gallery/aprilia/APRILIA_02.jpg'
-import Aprilia3 from '../images/gallery/aprilia/APRILIA_03.jpg'
-import Aprilia4 from '../images/gallery/aprilia/APRILIA_04.jpg'
-import Aprilia5 from '../images/gallery/aprilia/APRILIA_05.jpg'
-import Aprilia6 from '../images/gallery/aprilia/APRILIA_06.jpg'
-import Guzzi1 from '../images/gallery/guzzi/MOTOGUZZI_01.jpg'
-import Guzzi2 from '../images/gallery/guzzi/MOTOGUZZI_02.jpg'
-import Guzzi3 from '../images/gallery/guzzi/MOTOGUZZI_03.jpg'
-import Vespa1 from '../images/gallery/vespa/VESPA_01.jpg'
-import Vespa2 from '../images/gallery/vespa/VESPA_02.png'
-import Vespa3 from '../images/gallery/vespa/VESPA_03.jpg'
-import Vespa4 from '../images/gallery/vespa/VESPA_04.jpg'
-import Vespa5 from '../images/gallery/vespa/VESPA_05.jpg'
-import Vespa6 from '../images/gallery/vespa/VESPA_06.jpg'
-import Piaggio1 from '../images/gallery/piaggio/PIAGGIO_01.jpg'
-import Piaggio2 from '../images/gallery/piaggio/PIAGGIO_02.jpg'
+import Classic1 from '../images/gallery/classic/CLASSIC_01.png'
+import Classic2 from '../images/gallery/classic/CLASSIC_02.png'
+import Scram1 from '../images/gallery/scram/SCRAM_01.png'
+import Scram2 from '../images/gallery/scram/SCRAM_02.png'
+import Himalayan1 from '../images/gallery/himalayan/HIMALAYAN_01.png'
+import Himalayan2 from '../images/gallery/himalayan/HIMALAYAN_02.png'
+import Interceptor1 from '../images/gallery/interceptor/INTERCEPTOR_01.png'
+import Interceptor2 from '../images/gallery/interceptor/INTERCEPTOR_02.png'
+import Twin1 from '../images/gallery/twin/TWIN_01.png'
+import Twin2 from '../images/gallery/twin/TWIN_02.png'
+import Meteor1 from '../images/gallery/meteor/meteor_01.png'
+import Meteor2 from '../images/gallery/meteor/meteor_02.png'
 
 const getImages = brand => {
   if (brand === 'classic') {
     return [
-      Aprilia1, Aprilia2, Aprilia3, Aprilia4, Aprilia5, Aprilia6
+      Classic1, Classic2
     ]
   }
 
   if (brand === 'scram') {
     return [
-      Guzzi1, Guzzi2, Guzzi3
+      Scram1, Scram2
     ]
   }
 
   if (brand === 'himalayan') {
-    return [Piaggio1, Piaggio2]
+    return [Himalayan1, Himalayan2]
   }
 
   if (brand === 'interceptor') {
     return [
-      Vespa1, Vespa2, Vespa3, Vespa4, Vespa5, Vespa6
+      Interceptor1, Interceptor2
     ]
   }
-  if (brand === 'continental') {
+  if (brand === 'twin') {
     return [
-      Vespa1, Vespa2, Vespa3, Vespa4, Vespa5, Vespa6
+      Twin1, Twin2
     ]
   }
   if (brand === 'meteor') {
     return [
-      Vespa1, Vespa2, Vespa3, Vespa4, Vespa5, Vespa6
+      Meteor1, Meteor2
     ]
   }
 

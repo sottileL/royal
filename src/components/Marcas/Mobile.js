@@ -17,6 +17,9 @@ const MarcasMobile = ({ setIsOpen, setBrand }) => (
         <Grid
             item
             xs={6}
+            sx={{
+              cursor: 'pointer'
+            }}
             display="flex"
             justifyContent="center"
             onClick={() => { setBrand('classic'); setIsOpen(true) }}
@@ -32,6 +35,9 @@ const MarcasMobile = ({ setIsOpen, setBrand }) => (
         <Grid
             item
             xs={6}
+            sx={{
+              cursor: 'pointer'
+            }}
             display="flex"
             justifyContent="center"
             onClick={() => { setBrand('scram'); setIsOpen(true) }}
@@ -47,6 +53,9 @@ const MarcasMobile = ({ setIsOpen, setBrand }) => (
         <Grid
             item
             xs={6}
+            sx={{
+              cursor: 'pointer'
+            }}
             display="flex"
             justifyContent="center"
             onClick={() => { setBrand('himalayan'); setIsOpen(true) }}
@@ -62,6 +71,9 @@ const MarcasMobile = ({ setIsOpen, setBrand }) => (
         <Grid
             item
             xs={6}
+            sx={{
+              cursor: 'pointer'
+            }}
             display="flex"
             justifyContent="center"
             onClick={() => { setBrand('interceptor'); setIsOpen(true) }}
@@ -77,6 +89,9 @@ const MarcasMobile = ({ setIsOpen, setBrand }) => (
         <Grid
             item
             xs={6}
+            sx={{
+              cursor: 'pointer'
+            }}
             display="flex"
             justifyContent="center"
             onClick={() => { setBrand('continental'); setIsOpen(true) }}
@@ -92,6 +107,9 @@ const MarcasMobile = ({ setIsOpen, setBrand }) => (
         <Grid
             item
             xs={6}
+            sx={{
+              cursor: 'pointer'
+            }}
             display="flex"
             justifyContent="center"
             onClick={() => { setBrand('meteor'); setIsOpen(true) }}
