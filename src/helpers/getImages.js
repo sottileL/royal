@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-empty */
 import Classic1 from '../images/gallery/classic/CLASSIC_01.png'
 import Classic2 from '../images/gallery/classic/CLASSIC_02.png'
@@ -12,33 +13,192 @@ import Twin2 from '../images/gallery/twin/TWIN_02.png'
 import Meteor1 from '../images/gallery/meteor/meteor_01.png'
 import Meteor2 from '../images/gallery/meteor/meteor_02.png'
 
+const EMPTY_VALUE = ''
+
+const POTENCIA_CLASSIC_1 = '20.2 CV- 6100Rpm'
+const POTENCIA_CLASSIC_2 = ' 27Nm-4000 Rpm'
+const CILINDRADA_CLASSIC_1 = 'motocilindro, inyeccion, electronica'
+const CILINDRADA_CLASSIC_2 = 'refrigeracion aire y aceite'
+const CAPACIDAD_CLASSIC_1 = '13 LTS'
+const ALTURA_LIBRE_CLASSIC_1 = 'distancia desde el piso 170MM'
+
+const POTENCIA_INTERCEPTOR_1 = '47bph@7100rpm'
+const POTENCIA_INTERCEPTOR_2 = ' 27Nm-4000 Rpm'
+const CILINDRADA_INTERCEPTOR_1 = '648 CM3 bicilindrico en paralelo'
+const SISTEMA_INTERCEPTOR_1 = 'antibloqueo de frenos'
+const LUCES_INTERCEPTOR_1 = 'encendido automático de luces'
+
+const POTENCIA_HIMALAYAN_1 = '24.5 bph @6500 RPM'
+const CILINDRADA_HIMALAYAN_1 = '411 CC SINGLE CYLINDER'
+const SISTEMA_HIMALAYAN_1 = 'Antibloqueo de frenos'
+const LUCES_HIMALAYAN_1 = 'encendido automático de luces'
+
+const POTENCIA_SCRAM_1 = '17.88KW@6500 RPM'
+const CILINDRADA_SCRAM_1 = '411CC single cylinder'
+const SISTEMA_SCRAM_1 = 'abs de dos canales'
+const LUCES_SCRAM_1 = 'sistema automatico de luces'
+
+const POTENCIA_CONTINENTAL_1 = '47bph@7100rpm'
+const CILINDRADA_CONTINENTAL_1 = '648 CM3 bicilindrico en paralelo'
+const SISTEMA_CONTINENTAL_1 = 'antibloqueo de frenos'
+const LUCES_CONTINENTAL_1 = 'encendido automatico de luces'
+
 const getImages = brand => {
   if (brand === 'classic') {
     return [
-      Classic1, Classic2
+      {
+        renderCapacity: true,
+        renderFreeHeight: true,
+        image: Classic1,
+        potencia1: POTENCIA_CLASSIC_1,
+        potencia2: POTENCIA_CLASSIC_2,
+        cilindrada1: CILINDRADA_CLASSIC_1,
+        cilindrada2: CILINDRADA_CLASSIC_2,
+        capacidad1: CAPACIDAD_CLASSIC_1,
+        capacidad2: EMPTY_VALUE,
+        alturalibre1: ALTURA_LIBRE_CLASSIC_1,
+        alturalibre2: EMPTY_VALUE
+      },
+      {
+        renderCapacity: true,
+        renderFreeHeight: true,
+        image: Classic2,
+        potencia1: POTENCIA_CLASSIC_1,
+        potencia2: POTENCIA_CLASSIC_2,
+        cilindrada1: CILINDRADA_CLASSIC_1,
+        cilindrada2: CILINDRADA_CLASSIC_2,
+        capacidad1: CAPACIDAD_CLASSIC_1,
+        capacidad2: EMPTY_VALUE,
+        alturalibre1: ALTURA_LIBRE_CLASSIC_1,
+        alturalibre2: EMPTY_VALUE
+      }
+    ]
+  }
+
+  if (brand === 'interceptor') {
+    return [
+      {
+        renderSystem: true,
+        renderLights: true,
+        image: Interceptor1,
+        potencia1: POTENCIA_INTERCEPTOR_1,
+        potencia2: POTENCIA_INTERCEPTOR_2,
+        cilindrada1: CILINDRADA_INTERCEPTOR_1,
+        cilindrada2: EMPTY_VALUE,
+        sistema1: SISTEMA_INTERCEPTOR_1,
+        sistema2: EMPTY_VALUE,
+        luces1: LUCES_INTERCEPTOR_1,
+        luces2: EMPTY_VALUE
+      },
+      {
+        renderSystem: true,
+        renderLights: true,
+        image: Interceptor2,
+        potencia1: POTENCIA_INTERCEPTOR_1,
+        potencia2: POTENCIA_INTERCEPTOR_2,
+        cilindrada1: CILINDRADA_INTERCEPTOR_1,
+        cilindrada2: EMPTY_VALUE,
+        sistema1: SISTEMA_INTERCEPTOR_1,
+        sistema2: EMPTY_VALUE,
+        luces1: LUCES_INTERCEPTOR_1,
+        luces2: EMPTY_VALUE
+      }
+    ]
+  }
+
+  if (brand === 'himalayan') {
+    return [
+      {
+        renderSystem: true,
+        renderLights: true,
+        image: Himalayan1,
+        potencia1: POTENCIA_HIMALAYAN_1,
+        potencia2: EMPTY_VALUE,
+        cilindrada1: CILINDRADA_HIMALAYAN_1,
+        cilindrada2: EMPTY_VALUE,
+        sistema1: SISTEMA_HIMALAYAN_1,
+        sistema2: EMPTY_VALUE,
+        luces1: LUCES_HIMALAYAN_1,
+        luces2: EMPTY_VALUE
+      },
+      {
+        renderSystem: true,
+        renderLights: true,
+        image: Himalayan2,
+        potencia1: POTENCIA_HIMALAYAN_1,
+        potencia2: EMPTY_VALUE,
+        cilindrada1: CILINDRADA_HIMALAYAN_1,
+        cilindrada2: EMPTY_VALUE,
+        sistema1: SISTEMA_HIMALAYAN_1,
+        sistema2: EMPTY_VALUE,
+        luces1: LUCES_HIMALAYAN_1,
+        luces2: EMPTY_VALUE
+      }
     ]
   }
 
   if (brand === 'scram') {
     return [
-      Scram1, Scram2
+      {
+        renderSystem: true,
+        renderLights: true,
+        image: Scram1,
+        potencia1: POTENCIA_SCRAM_1,
+        potencia2: EMPTY_VALUE,
+        cilindrada1: CILINDRADA_SCRAM_1,
+        cilindrada2: EMPTY_VALUE,
+        sistema1: SISTEMA_SCRAM_1,
+        sistema2: EMPTY_VALUE,
+        luces1: LUCES_SCRAM_1,
+        luces2: EMPTY_VALUE
+      },
+      {
+        renderSystem: true,
+        renderLights: true,
+        image: Scram2,
+        potencia1: POTENCIA_SCRAM_1,
+        potencia2: EMPTY_VALUE,
+        cilindrada1: CILINDRADA_SCRAM_1,
+        cilindrada2: EMPTY_VALUE,
+        sistema1: SISTEMA_SCRAM_1,
+        sistema2: EMPTY_VALUE,
+        luces1: LUCES_SCRAM_1,
+        luces2: EMPTY_VALUE
+      }
     ]
   }
 
-  if (brand === 'himalayan') {
-    return [Himalayan1, Himalayan2]
+  if (brand === 'continental') {
+    return [
+      {
+        renderSystem: true,
+        renderLights: true,
+        image: Scram1,
+        potencia1: POTENCIA_CONTINENTAL_1,
+        potencia2: EMPTY_VALUE,
+        cilindrada1: CILINDRADA_CONTINENTAL_1,
+        cilindrada2: EMPTY_VALUE,
+        sistema1: SISTEMA_CONTINENTAL_1,
+        sistema2: EMPTY_VALUE,
+        luces1: LUCES_CONTINENTAL_1,
+        luces2: EMPTY_VALUE
+      },
+      {
+        renderSystem: true,
+        renderLights: true,
+        image: Scram2,
+        potencia1: POTENCIA_CONTINENTAL_1,
+        potencia2: EMPTY_VALUE,
+        cilindrada1: CILINDRADA_CONTINENTAL_1,
+        cilindrada2: EMPTY_VALUE,
+        sistema1: SISTEMA_CONTINENTAL_1,
+        sistema2: EMPTY_VALUE,
+        luces1: LUCES_CONTINENTAL_1,
+        luces2: EMPTY_VALUE
+      }
+    ]
   }
 
-  if (brand === 'interceptor') {
-    return [
-      Interceptor1, Interceptor2
-    ]
-  }
-  if (brand === 'twin') {
-    return [
-      Twin1, Twin2
-    ]
-  }
   if (brand === 'meteor') {
     return [
       Meteor1, Meteor2

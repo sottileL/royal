@@ -36,6 +36,8 @@ import distance from '../../images/specs/distance.svg'
 import oil from '../../images/specs/oil.svg'
 import enigne from '../../images/specs/engine.svg'
 import thunder from '../../images/specs/thunder.svg'
+import system from '../../images/specs/system.svg'
+import lights from '../../images/specs/lights.svg'
 
 const TitleNavbar = styled(Typography)(() => ({
   fontSize: '1.1rem!important',
@@ -64,6 +66,16 @@ const Desktop = () => {
   const modelosRef = useRef(null)
   const nosotrosRef = useRef(null)
   const contactoRef = useRef(null)
+  const sliderRef = useRef(null)
+
+  const settings = {
+    arrows: true,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  }
 
   const handleClickMenu = section => {
     if (section === 'inicio') {
@@ -82,12 +94,6 @@ const Desktop = () => {
       contactoRef.current.scrollIntoView({ behavior: 'smooth' })
     }
   }
-
-  useEffect(() => {
-    console.log('luciano', brand)
-    setArrayToMap(brand)
-    console.log('luciano', arrayToMap)
-  }, [brand])
 
   return (
         <Grid direction="column" width="100%" id="inicio" ref={inicioRef}>
@@ -118,88 +124,135 @@ const Desktop = () => {
                 <Marcas setIsOpen={setIsOpen} setBrand={setBrand}/>
             </Grid>
             {isOpen && (
-                <Slider>
-                    {classic.map((item) => (
+                <Slider {...settings}>
+                    {images.map((item) => (
                 // eslint-disable-next-line react/jsx-key
-                <Box sx={{ width: '100vw' }}>
-                    <img width="100%" height="auto" src={item.image}></img>
-                    {/* {true && ( */}
-                        <Box sx={{ backgroundColor: '#201c1c', paddingBottom: 6 }} >
-                        <TitleNavbar sx={{ display: 'flex', justifyContent: 'center', paddingTop: 2, paddingBottom: 1 }}>ESPECIFICACIONES</TitleNavbar>
-                        <Grid container direction="row" sx={{ pt: 3 }}>
-                            <Grid item md={3} display="flex" justifyContent="center">
-                                <Box md={3} xs={3} >
-                                    <img src={thunder} style={{
-                                      marginLeft: 'auto',
-                                      marginRight: 'auto',
-                                      width: 'auto',
-                                      height: '80px',
-                                      backgroundColor: 'white',
-                                      borderRadius: '50%',
-                                      marginBottom: 10
-                                    }}/>
+                <Box sx={{ display: 'flex', justifyContent: 'center', margin: 'auto' }}>
+                    <Box width="90%" margin="auto">
+                        <img width="100%" height="500px" src={item.image}></img>
+                    </Box>
+                        <Box sx={{ backgroundColor: '#201c1c', paddingBottom: 6, width: '90%', margin: 'auto' }}>
+                            <TitleNavbar sx={{ display: 'flex', justifyContent: 'center', paddingTop: 2, paddingBottom: 1 }}>ESPECIFICACIONES</TitleNavbar>
+                            <Grid container direction="row" sx={{ pt: 3 }}>
+                                <Grid item md={3} display="flex" justifyContent="center">
+                                    <Box md={3} xs={3} >
+                                        <img src={thunder} style={{
+                                          marginLeft: 'auto',
+                                          marginRight: 'auto',
+                                          width: 'auto',
+                                          height: '80px',
+                                          backgroundColor: 'white',
+                                          borderRadius: '50%',
+                                          marginBottom: 10
+                                        }}/>
+                                        <SpecsTypography>
+                                            POTENCIA <br></br>
+                                            {item.potencia1}<br></br>
+                                            {item.potencia2}
+                                        </SpecsTypography>
+                                    </Box>
+                                </Grid>
+                                <Grid item md={3} display="flex" justifyContent="center">
+                                    <Box md={3} xs={3}>
+                                        <img src={enigne} style={{
+                                          marginLeft: 'auto',
+                                          marginRight: 'auto',
+                                          width: 'auto',
+                                          height: '80px',
+                                          backgroundColor: 'white',
+                                          borderRadius: '50%',
+                                          marginBottom: 10
+                                        }}/>
                                     <SpecsTypography>
-                                        POTENCIA <br></br>
-                                        {item.potencia1}<br></br>
-                                        {item.potencia2}
+                                        CILINDRADA <br></br>
+                                        {item.cilindrada1}<br></br>
+                                        {item.cilindrada2}
                                     </SpecsTypography>
-                                </Box>
-                            </Grid>
-                            <Grid item md={3} display="flex" justifyContent="center">
-                                <Box md={3} xs={3}>
-                                    <img src={enigne} style={{
-                                      marginLeft: 'auto',
-                                      marginRight: 'auto',
-                                      width: 'auto',
-                                      height: '80px',
-                                      backgroundColor: 'white',
-                                      borderRadius: '50%',
-                                      marginBottom: 10
-                                    }}/>
-                                <SpecsTypography>
-                                    CILINDRADA <br></br>
-                                    {item.cilindrada1}<br></br>
-                                    {item.cilindrada2}
-                                </SpecsTypography>
-                                </Box>
-                            </Grid>
-                            <Grid item md={3} display="flex" justifyContent="center">
-                                <Box md={3} xs={3}>
-                                    <img src={oil} style={{
-                                      marginLeft: 'auto',
-                                      marginRight: 'auto',
-                                      width: 'auto',
-                                      height: '80px',
-                                      backgroundColor: 'white',
-                                      borderRadius: '50%',
-                                      marginBottom: 10
-                                    }}/>
+                                    </Box>
+                                </Grid>
+                                <Grid item md={3} display="flex" justifyContent="center">
+                                    <Box md={3} xs={3}>
+                                        {item.renderCapacity && (
+                                            <>
+                                                <img src={oil} style={{
+                                                  marginLeft: 'auto',
+                                                  marginRight: 'auto',
+                                                  width: 'auto',
+                                                  height: '80px',
+                                                  backgroundColor: 'white',
+                                                  borderRadius: '50%',
+                                                  marginBottom: 10
+                                                }}/>
+                                                <SpecsTypography>
+                                                    CAPACIDAD <br></br>
+                                                    {item.capacidad1}<br></br>
+                                                    {item.capacidad2}
+
+                                                </SpecsTypography>
+                                            </>
+                                        )}
+                                        {item.renderSystem && (
+                                            <>
+                                            <img src={system} style={{
+                                              marginLeft: 'auto',
+                                              marginRight: 'auto',
+                                              width: 'auto',
+                                              height: '80px',
+                                              backgroundColor: 'white',
+                                              borderRadius: '50%',
+                                              marginBottom: 10
+                                            }}/>
+                                            <SpecsTypography>
+                                                SISTEMA <br></br>
+                                                {item.sistema1}<br></br>
+                                                {item.sistema2}
+                                            </SpecsTypography>
+                                        </>
+                                        )}
+                                    </Box>
+                                </Grid>
+                                <Grid item md={3} display="flex" justifyContent="center">
+                                    <Box md={3} xs={3}>
+                                    {item.renderFreeHeight && (
+                                    <>
+                                        <img src={distance} style={{
+                                          marginLeft: 'auto',
+                                          marginRight: 'auto',
+                                          width: 'auto',
+                                          height: '80px',
+                                          backgroundColor: 'white',
+                                          borderRadius: '50%',
+                                          marginBottom: 10
+                                        }}/>
                                     <SpecsTypography>
-                                        CAPACIDAD <br></br>
-                                        {item.capacidad1}<br></br>
-                                        {item.capacidad2}
+                                        ALTURA LIBRE <br></br>
+                                        {item.alturalibre1}<br></br>
+                                        {item.alturalibre2}
                                     </SpecsTypography>
+                                    </>
+                                    )}
+                                    {item.renderLights && (
+                                        <>
+                                        <img src={lights} style={{
+                                          marginLeft: 'auto',
+                                          marginRight: 'auto',
+                                          width: 'auto',
+                                          height: '80px',
+                                          backgroundColor: 'white',
+                                          borderRadius: '50%',
+                                          marginBottom: 10
+                                        }}/>
+                                    <SpecsTypography>
+                                        LUCES <br></br>
+                                        {item.luces1}<br></br>
+                                        {item.luces2}
+                                    </SpecsTypography>
+                                    </>
+
+                                    )}
                                 </Box>
+                                </Grid>
                             </Grid>
-                            <Grid item md={3} display="flex" justifyContent="center">
-                                <Box md={3} xs={3}>
-                                    <img src={distance} style={{
-                                      marginLeft: 'auto',
-                                      marginRight: 'auto',
-                                      width: 'auto',
-                                      height: '80px',
-                                      backgroundColor: 'white',
-                                      borderRadius: '50%',
-                                      marginBottom: 10
-                                    }}/>
-                                <SpecsTypography>
-                                    ALTURA LIBRE <br></br>
-                                    {item.alturalibre1}<br></br>
-                                    {item.alturalibre2}
-                                </SpecsTypography>
-                            </Box>
-                            </Grid>
-                        </Grid>
                         <Box display="flex" justifyContent="center" sx={{ paddingTop: 4 }}>
                             <Button sx={{ backgroundColor: 'white', color: 'black', padding: 1, fontSize: 10 }}>
                             DESCARGAR FICHA TÉCNICA
@@ -212,7 +265,7 @@ const Desktop = () => {
             )}
             <Grid item
                 sx={{
-                  width: '100%', backgroundColor: '#222222', textAlign: 'center'
+                  width: '100%', backgroundColor: '#222222', textAlign: 'center', mt: 6
                 }}
                 id="nosotros"
                 ref={nosotrosRef}
