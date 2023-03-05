@@ -17,7 +17,7 @@ const EMPTY_VALUE = ''
 
 const POTENCIA_CLASSIC_1 = '20.2 CV- 6100Rpm'
 const POTENCIA_CLASSIC_2 = ' 27Nm-4000 Rpm'
-const CILINDRADA_CLASSIC_1 = 'motocilindro, inyeccion, electronica'
+const CILINDRADA_CLASSIC_1 = 'motocilindro, inyeccion electrónica'
 const CILINDRADA_CLASSIC_2 = 'refrigeracion aire y aceite'
 const CAPACIDAD_CLASSIC_1 = '13 LTS'
 const ALTURA_LIBRE_CLASSIC_1 = 'distancia desde el piso 170MM'

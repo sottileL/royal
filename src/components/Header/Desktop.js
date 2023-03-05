@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react'
@@ -10,12 +11,12 @@ import Typography from '@mui/material/Typography'
 import Logo from '../../images/logo.webp'
 
 const TitleNavbar = styled(Typography)(() => ({
-  fontSize: '1.30rem!important',
-  fontWeight: 'bold !important',
-  color: 'white',
-  paddingLeft: 25,
-  letterSpacing: '2px',
-  textDecoration: 'none'
+    fontSize: '1.30rem!important',
+    fontWeight: 'bold !important',
+    color: 'white',
+    paddingLeft: 25,
+    letterSpacing: '2px',
+    textDecoration: 'none'
 }))
 
 const HeaderDesktop = ({ handleClickMenu }) => (
@@ -25,11 +26,11 @@ const HeaderDesktop = ({ handleClickMenu }) => (
                 src={Logo}
                 alt="logo"
                 style={{
-                  width: 'auto', height: '30px'
+                    width: 'auto', height: '30px'
                 }}
             />
         </Grid>
-        <Grid item md={9} pr={20} display="flex" direction="row" alignItems="center" justifyContent="flex-end">
+        <Grid item md={9} pr={12} display="flex" direction="row" alignItems="center" justifyContent="flex-end">
             <TitleNavbar component={Link} to="#inicio" onClick={() => handleClickMenu('inicio')}>
                 INICIO
             </TitleNavbar>

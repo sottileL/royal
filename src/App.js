@@ -11,7 +11,7 @@ const App = () => (
     <ThemeProvider theme={LightTheme}>
         <BrowserRouter>
             <Switch>
-                <Route path="/" key="RoyalEnfield" component={RoyalEnfield}/>
+                <Route path="/" key="RoyalEnfield" component={RoyalEnfield} />
             </Switch>
         </BrowserRouter>
     </ThemeProvider>
