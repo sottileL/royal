@@ -1,11 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { useRef, useState } from 'react'
+import { styled } from '@mui/styles'
 import { scrollIntoView } from 'seamless-scroll-polyfill'
 
 import { Carousel } from 'react-responsive-carousel'
 import Lightbox from 'react-image-lightbox'
 
 import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
@@ -23,9 +25,19 @@ import Banner2 from '../../images/banner-mobile-2.webp'
 
 import Nosotros from '../../images/nosotros.webp'
 
+import NewCarousel from 'react-gallery-carousel'
+import 'react-gallery-carousel/dist/index.css'
+
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import 'react-image-lightbox/style.css'
 import './style.css'
+
+import distance from '../../images/specs/distance.svg'
+import oil from '../../images/specs/oil.svg'
+import enigne from '../../images/specs/engine.svg'
+import thunder from '../../images/specs/thunder.svg'
+import system from '../../images/specs/system.svg'
+import lights from '../../images/specs/lights.svg'
 
 const Mobile = () => {
   const [brand, setBrand] = useState(null)
@@ -37,6 +49,22 @@ const Mobile = () => {
   const modelosRef = useRef(null)
   const nosotrosRef = useRef(null)
   const contactoRef = useRef(null)
+
+  const TitleNavbar = styled(Typography)(() => ({
+    fontSize: '1rem!important',
+    fontWeight: 'bold !important',
+    color: 'white',
+    paddingLeft: 25,
+    letterSpacing: '3px',
+    textDecoration: 'none'
+  }))
+
+  const SpecsTypography = styled(Typography)(() => ({
+    fontSize: '0.8rem !important',
+    textAlign: 'center',
+    color: 'white',
+    textDecoration: 'none'
+  }))
 
   const handleClickMenu = section => {
     if (section === 'inicio') {
@@ -93,14 +121,149 @@ const Mobile = () => {
                 <Marcas setIsOpen={setIsOpen} setBrand={setBrand}/>
             </Grid>
             {isOpen && (
-                <Lightbox
-                    mainSrc={images[photoIndex]}
-                    nextSrc={images[(photoIndex + 1) % images.length]}
-                    prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-                    onCloseRequest={() => { setIsOpen(false); setPhotoIndex(0); setBrand(null) }}
-                    onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
-                    onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % images.length)}
-                />
+                <NewCarousel hasTransition={true}
+                hasMediaButton={false}
+                hasSizeButton={false}
+                hasIndexBoard={false}
+                hasCaptions={false}
+                hasThumbnails={false}
+                objectFitAtMax="contain"
+                shouldMinimizeOnClick={true}
+                isMaximized={true}
+                >
+                {images.map((item) => (
+                // eslint-disable-next-line react/jsx-key
+                <Box sx={{ backgroundColor: '#201c1c', paddingBottom: 8 }}>
+                    <img width="100px" height="auto" src={item.image}></img>
+                    <TitleNavbar sx={{ display: 'flex', justifyContent: 'center', paddingTop: 2, paddingBottom: 1 }}>ESPECIFICACIONES</TitleNavbar>
+                    <Grid container direction="row" justifyContent="space-evenly" sx={{ pt: 3 }}>
+                        <Grid item xs={6} display="flex" justifyContent="center" pt={1}>
+                            <Box sx={{ textAlign: 'center' }}>
+                                <img src={thunder} style={{
+                                  marginLeft: 'auto',
+                                  marginRight: 'auto',
+                                  width: 'auto',
+                                  height: '50px',
+                                  backgroundColor: 'white',
+                                  borderRadius: '50%',
+                                  marginBottom: 10
+                                }}/>
+                                <SpecsTypography>
+                                    POTENCIA <br></br>
+                                    {item.potencia1}<br></br>
+                                    {item.potencia2}
+                                </SpecsTypography>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={6} display="flex" justifyContent="center" pt={1}>
+                            <Box sx={{ textAlign: 'center' }}>
+                                <img src={enigne} style={{
+                                  marginLeft: 'auto',
+                                  marginRight: 'auto',
+                                  width: 'auto',
+                                  height: '50px',
+                                  backgroundColor: 'white',
+                                  borderRadius: '50%',
+                                  marginBottom: 10
+                                }}/>
+                            <SpecsTypography>
+                                CILINDRADA <br></br>
+                                {item.cilindrada1}<br></br>
+                                {item.cilindrada2}
+                            </SpecsTypography>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={6} display="flex" justifyContent="center" pt={1}>
+                            <Box sx={{ textAlign: 'center' }}>
+                                {item.renderCapacity && (
+                                    <>
+                                        <img src={oil} style={{
+                                          marginLeft: 'auto',
+                                          marginRight: 'auto',
+                                          width: 'auto',
+                                          height: '50px',
+                                          backgroundColor: 'white',
+                                          borderRadius: '50%',
+                                          marginBottom: 10
+                                        }}/>
+                                        <SpecsTypography>
+                                            CAPACIDAD <br></br>
+                                            {item.capacidad1}<br></br>
+                                            {item.capacidad2}
+
+                                        </SpecsTypography>
+                                    </>
+                                )}
+                                {item.renderSystem && (
+                                    <>
+                                    <img src={system} style={{
+                                      marginLeft: 'auto',
+                                      marginRight: 'auto',
+                                      width: 'auto',
+                                      height: '50px',
+                                      backgroundColor: 'white',
+                                      borderRadius: '50%',
+                                      marginBottom: 10
+                                    }}/>
+                                    <SpecsTypography>
+                                        SISTEMA <br></br>
+                                        {item.sistema1}<br></br>
+                                        {item.sistema2}
+                                    </SpecsTypography>
+                                </>
+                                )}
+                            </Box>
+                        </Grid>
+                        <Grid item xs={6} display="flex" justifyContent="center" pt={1}>
+                            <Box sx={{ textAlign: 'center' }}>
+                            {item.renderFreeHeight && (
+                            <>
+                                <img src={distance} style={{
+                                  marginLeft: 'auto',
+                                  marginRight: 'auto',
+                                  width: 'auto',
+                                  height: '50px',
+                                  backgroundColor: 'white',
+                                  borderRadius: '50%',
+                                  marginBottom: 10
+                                }}/>
+                            <SpecsTypography>
+                                ALTURA LIBRE <br></br>
+                                {item.alturalibre1}<br></br>
+                                {item.alturalibre2}
+                            </SpecsTypography>
+                            </>
+                            )}
+                            {item.renderLights && (
+                                <>
+                                <img src={lights} style={{
+                                  marginLeft: 'auto',
+                                  marginRight: 'auto',
+                                  width: 'auto',
+                                  height: '50px',
+                                  backgroundColor: 'white',
+                                  borderRadius: '50%',
+                                  marginBottom: 10
+                                }}/>
+                            <SpecsTypography>
+                                LUCES <br></br>
+                                {item.luces1}<br></br>
+                                {item.luces2}
+                            </SpecsTypography>
+                            </>
+
+                            )}
+                        </Box>
+                        </Grid>
+                    </Grid>
+                    <Box display="flex" justifyContent="center" sx={{ paddingTop: 4 }}>
+                        <Button sx={{ backgroundColor: 'white', color: 'black', padding: 1, fontSize: '1rem' }}>
+                            DESCARGAR FICHA TÉCNICA
+                        </Button>
+                    </Box>
+                </Box>
+                ))}
+            </NewCarousel>
             )}
             <Grid
                 item

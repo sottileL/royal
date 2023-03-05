@@ -58,11 +58,11 @@ const MarcasMobile = ({ setIsOpen, setBrand }) => (
             }}
             display="flex"
             justifyContent="center"
-            onClick={() => { setBrand('himalayan'); setIsOpen(true) }}
+            onClick={() => { setBrand('interceptor'); setIsOpen(true) }}
         >
             <img
-                src={TercerMoto}
-                alt="himalayan"
+                src={CuartaMoto}
+                alt="interceptor"
                 style={{
                   width: '100%'
                 }}
@@ -76,11 +76,11 @@ const MarcasMobile = ({ setIsOpen, setBrand }) => (
             }}
             display="flex"
             justifyContent="center"
-            onClick={() => { setBrand('interceptor'); setIsOpen(true) }}
+            onClick={() => { setBrand('himalayan'); setIsOpen(true) }}
         >
             <img
-                src={CuartaMoto}
-                alt="interceptor"
+                src={TercerMoto}
+                alt="himalayan"
                 style={{
                   width: '100%'
                 }}
