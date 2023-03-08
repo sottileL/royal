@@ -5,11 +5,14 @@ import { scrollIntoView } from 'seamless-scroll-polyfill'
 
 import { Carousel } from 'react-responsive-carousel'
 
+import { useHistory } from 'react-router-dom'
+
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Grid from '@mui/material/Grid'
 import Modal from '@mui/material/Modal'
 import Typography from '@mui/material/Typography'
+import IconButton from '@mui/material/IconButton'
 
 import LocationCityRounded from '@mui/icons-material/LocationOn'
 import WhatsApp from '@mui/icons-material/WhatsApp'
@@ -38,9 +41,10 @@ import enigne from '../../images/specs/engine.svg'
 import thunder from '../../images/specs/thunder.svg'
 import system from '../../images/specs/system.svg'
 import lights from '../../images/specs/lights.svg'
-import { lineHeight } from '@mui/system'
 
 const Mobile = () => {
+    const history = useHistory()
+
     const [brand, setBrand] = useState(null)
     const images = getImages(brand)
     const [isOpen, setIsOpen] = useState(false)
@@ -274,7 +278,7 @@ const Mobile = () => {
                                         </Grid>
                                     </Grid>
                                     <Box display="flex" justifyContent="center" sx={{ pt: 2, position: 'absolute', bottom: 10, left: '20%', right: '20%' }}>
-                                        <Button sx={{ backgroundColor: 'white', color: 'black', fontSize: '0.6rem', padding: 0.5 }}>
+                                        <Button onClick={() => { console.log('onClick') }} sx={{ backgroundColor: 'white', color: 'black', fontSize: '0.6rem', padding: 0.5 }}>
                                             DESCARGAR FICHA TÉCNICA
                                         </Button>
                                     </Box>
@@ -283,7 +287,8 @@ const Mobile = () => {
                         </NewCarousel>
                     </>
                 </Modal>
-            )}
+            )
+            }
             <Grid
                 item
                 sx={{
@@ -356,7 +361,7 @@ const Mobile = () => {
             >
                 <i className="fa fa-whatsapp my-float" />
             </a>
-        </Grid>
+        </Grid >
     )
 }
 

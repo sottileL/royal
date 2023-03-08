@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-empty */
 import Classic1 from '../images/gallery/classic/CLASSIC_01.png'
@@ -173,7 +174,7 @@ const getImages = brand => {
       {
         renderSystem: true,
         renderLights: true,
-        image: Scram1,
+        image: Twin1,
         potencia1: POTENCIA_CONTINENTAL_1,
         potencia2: EMPTY_VALUE,
         cilindrada1: CILINDRADA_CONTINENTAL_1,
@@ -186,7 +187,7 @@ const getImages = brand => {
       {
         renderSystem: true,
         renderLights: true,
-        image: Scram2,
+        image: Twin2,
         potencia1: POTENCIA_CONTINENTAL_1,
         potencia2: EMPTY_VALUE,
         cilindrada1: CILINDRADA_CONTINENTAL_1,
@@ -201,7 +202,28 @@ const getImages = brand => {
 
   if (brand === 'meteor') {
     return [
-      Meteor1, Meteor2
+      {
+        renderSystem: false,
+        renderLights: false,
+        cilindrada1: '349cc 20,2 bhp',
+        cilindrada2: '@6100 rpm',
+        altura1: '170mm',
+        altura2: EMPTY_VALUE,
+        frenos1: 'ABS de doble canal',
+        frenos2: EMPTY_VALUE,
+        image: Meteor1
+      },
+      {
+        renderSystem: false,
+        renderLights: false,
+        cilindrada1: '349cc 20,2 bhp',
+        cilindrada2: '@6100 rpm',
+        altura1: '170mm',
+        altura2: EMPTY_VALUE,
+        frenos1: 'ABS de doble canal',
+        frenos2: EMPTY_VALUE,
+        image: Meteor2
+      }
     ]
   }
 

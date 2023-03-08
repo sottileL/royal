@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState } from 'react'
 
 import { Carousel } from 'react-responsive-carousel'
 
@@ -8,7 +8,7 @@ import Button from '@mui/material/Button'
 import Grid from '@mui/material/Grid'
 import Modal from '@mui/material/Modal'
 import Typography from '@mui/material/Typography'
-import { styled, makeStyles } from '@mui/styles'
+import { styled } from '@mui/styles'
 
 import LocationCityRounded from '@mui/icons-material/LocationOn'
 import WhatsApp from '@mui/icons-material/WhatsApp'
@@ -26,6 +26,7 @@ import Logo from '../../images/logo.webp'
 import Nosotros from '../../images/nosotros.webp'
 
 import getImages from '../../helpers/getImages'
+import getFicha from '../../helpers/getFicha'
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import 'react-image-lightbox/style.css'
@@ -261,7 +262,7 @@ const Desktop = () => {
                                         </Grid>
                                     </Grid>
                                     <Box display="flex" justifyContent="center" sx={{ paddingTop: 4 }}>
-                                        <Button sx={{ backgroundColor: 'white', color: 'black', fontSize: '0.8rem' }}>
+                                        <Button href={getFicha(brand)} target='_blank' sx={{ backgroundColor: 'white', color: 'black', fontSize: '0.8rem' }}>
                                             DESCARGAR FICHA TÉCNICA
                                         </Button>
                                     </Box>
