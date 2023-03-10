@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { Carousel } from 'react-responsive-carousel'
 
@@ -65,6 +65,16 @@ const Desktop = () => {
     const images = getImages(brand)
     const [isOpen, setIsOpen] = useState(false)
 
+    const carouselRef = useRef(null)
+
+    useEffect(() => {
+        setTimeout(() => {
+            if (isOpen) {
+                carouselRef.current.play()
+            }
+        }, 50)
+    }, [isOpen])
+
     const inicioRef = useRef(null)
     const modelosRef = useRef(null)
     const nosotrosRef = useRef(null)
@@ -119,18 +129,17 @@ const Desktop = () => {
             {isOpen && (
                 <Modal open={isOpen} sx={{ margin: 'auto' }} onClose={() => setIsOpen(false)}>
                     <>
-                        <NewCarousel className='distanceFromTop'
+                        <NewCarousel ref={carouselRef} className='distanceFromTop'
                             style={{ ...modalStyle, width: '100vw', height: '90vh', backgroundColor: '#201c1c' }}
-                            hasTransition={true}
+                            isAutoPlaying
+                            canAutoPlay
                             hasMediaButton={false}
-                            hasSizeButton={false}
+                            autoPlayInterval={2000}
+                            hasTransition={true}
                             hasIndexBoard={false}
                             hasCaptions={false}
                             hasThumbnails={false}
-                            isAutoPlaying={true}
-                            autoPlayInterval={100}
-                            isLoop={true}
-                            transitionSpeed={1}
+                            hasSizeButton={false}
                         >
                             {images.map((item) => (
                                 // eslint-disable-next-line react/jsx-key

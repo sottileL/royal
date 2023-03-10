@@ -17,7 +17,7 @@ import IconButton from '@mui/material/IconButton'
 import LocationCityRounded from '@mui/icons-material/LocationOn'
 import WhatsApp from '@mui/icons-material/WhatsApp'
 
-import getImages from '../../helpers/getImages'
+import getImages from '../../helpers/getImagesMobile'
 
 import ContactForm from '../../components/ContactForm/Mobile'
 import Header from '../../components/Header/Mobile'

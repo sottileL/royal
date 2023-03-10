@@ -1,24 +1,24 @@
 /* eslint-disable indent */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-empty */
-import Classic1 from '../images/gallery/classic/CLASSIC_01.png'
-import Classic2 from '../images/gallery/classic/CLASSIC_02.png'
-import Classic3 from '../images/gallery/classic/CLASSIC_03.png'
-import Scram1 from '../images/gallery/scram/SCRAM_01.png'
-import Scram2 from '../images/gallery/scram/SCRAM_02.png'
-import Scram3 from '../images/gallery/scram/SCRAM_03.png'
-import Himalayan1 from '../images/gallery/himalayan/HIMALAYAN_01.png'
-import Himalayan2 from '../images/gallery/himalayan/HIMALAYAN_02.png'
-import Himalayan3 from '../images/gallery/himalayan/HIMALAYAN_03.png'
-import Interceptor1 from '../images/gallery/interceptor/INTERCEPTOR_01.png'
-import Interceptor2 from '../images/gallery/interceptor/INTERCEPTOR_02.png'
-import Interceptor3 from '../images/gallery/interceptor/INTERCEPTOR_03.png'
-import Twin1 from '../images/gallery/twin/TWIN_01.png'
-import Twin2 from '../images/gallery/twin/TWIN_02.png'
-import Twin3 from '../images/gallery/twin/TWIN_03.png'
-import Meteor1 from '../images/gallery/meteor/METEOR_01.png'
-import Meteor2 from '../images/gallery/meteor/METEOR_02.png'
-import Meteor3 from '../images/gallery/meteor/METEOR_03.png'
+import Classic1 from '../images/gallery/classic/CLASSIC_01_MOB.png'
+import Classic2 from '../images/gallery/classic/CLASSIC_02_MOB.png'
+import Classic3 from '../images/gallery/classic/CLASSIC_03_MOB.png'
+import Scram1 from '../images/gallery/scram/SCRAM_01_MOB.png'
+import Scram2 from '../images/gallery/scram/SCRAM_02_MOB.png'
+import Scram3 from '../images/gallery/scram/SCRAM_03_MOB.png'
+import Himalayan1 from '../images/gallery/himalayan/HIMALAYAN_01_MOB.png'
+import Himalayan2 from '../images/gallery/himalayan/HIMALAYAN_02_MOB.png'
+import Himalayan3 from '../images/gallery/himalayan/HIMALAYAN_03_MOB.png'
+import Interceptor1 from '../images/gallery/interceptor/INTERCEPTOR_01_MOB.png'
+import Interceptor2 from '../images/gallery/interceptor/INTERCEPTOR_02_MOB.png'
+import Interceptor3 from '../images/gallery/interceptor/INTERCEPTOR_03_MOB.png'
+import Twin1 from '../images/gallery/twin/TWIN_01_MOB.png'
+import Twin2 from '../images/gallery/twin/TWIN_02_MOB.png'
+import Twin3 from '../images/gallery/twin/TWIN_03_MOB.png'
+import Meteor1 from '../images/gallery/meteor/METEOR_01_MOB.png'
+import Meteor2 from '../images/gallery/meteor/METEOR_02_MOB.png'
+import Meteor3 from '../images/gallery/meteor/METEOR_03_MOB.png'
 
 const EMPTY_VALUE = ''
 
@@ -275,43 +275,36 @@ const getImages = brand => {
     return [
       {
         renderSystem: true,
-        renderFreeHeight: true,
+        renderLights: true,
         image: Meteor1,
-        potencia1: '349cc 20,2 bhp',
-        potencia2: '@6100 rpm',
-        cilindrada1: '4 timepos',
-        cilindrada2: '5 velocidades',
+        cilindrada1: '349cc 20,2 bhp',
+        cilindrada2: '@6100 rpm',
+        altura1: '170mm',
+        altura2: EMPTY_VALUE,
         sistema1: 'ABS de doble canal',
-        sistema2: EMPTY_VALUE,
-        alturalibre1: '170mm',
-        alturalibre2: EMPTY_VALUE
+        sistema2: EMPTY_VALUE
       },
       {
         renderSystem: true,
-        renderFreeHeight: true,
+        renderLights: true,
         image: Meteor2,
-        potencia1: '349cc 20,2 bhp',
-        potencia2: '@6100 rpm',
-        cilindrada1: '4 tiempos',
-        cilindrada2: '5 velocidades',
+        cilindrada1: '349cc 20,2 bhp',
+        cilindrada2: '@6100 rpm',
+        altura1: '170mm',
+        altura2: EMPTY_VALUE,
         sistema1: 'ABS de doble canal',
-        sistema2: EMPTY_VALUE,
-        alturalibre1: '170mm',
-        alturalibre2: EMPTY_VALUE
+        sistema2: EMPTY_VALUE
       },
       {
         renderSystem: true,
-        renderFreeHeight: true,
+        renderLights: true,
         image: Meteor3,
-        potencia1: '349cc 20,2 bhp',
-        potencia2: '@6100 rpm',
-        cilindrada1: '4 tiempos',
-        cilindrada2: '5 velocidades',
+        cilindrada1: '349cc 20,2 bhp',
+        cilindrada2: '@6100 rpm',
+        altura1: '170mm',
+        altura2: EMPTY_VALUE,
         sistema1: 'ABS de doble canal',
-        sistema2: EMPTY_VALUE,
-        alturalibre1: '170mm',
-        alturalibre2: EMPTY_VALUE
-
+        sistema2: EMPTY_VALUE
       }
     ]
   }
